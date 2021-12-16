@@ -26,8 +26,8 @@ object Form1: TForm1
     Brush.Color = clSilver
   end
   object ball: TImage
-    Left = 872
-    Top = 432
+    Left = 664
+    Top = 0
     Width = 32
     Height = 32
     AutoSize = True
