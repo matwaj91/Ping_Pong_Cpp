@@ -94,7 +94,7 @@ void __fastcall TForm1::timerBallTimer(TObject *Sender)
             ball->Left >= leftRacket->Left + leftRacket->Width)
    {
       if(ballHorizontalOffset > 0) ballHorizontalOffset = -ballHorizontalOffset;
-   } 
+   } ///
 
 }
 //---------------------------------------------------------------------------
