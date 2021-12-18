@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 226
-  Top = 111
-  Width = 959
+  Left = 268
+  Top = 71
+  Width = 957
   Height = 588
   Caption = 'Ping Pong'
   Color = clBtnFace
@@ -20,17 +20,32 @@ object Form1: TForm1
   object background: TShape
     Left = 0
     Top = 0
-    Width = 943
+    Width = 941
     Height = 549
     Align = alClient
     Brush.Color = clSilver
   end
+  object header: TLabel
+    Left = 240
+    Top = 64
+    Width = 460
+    Height = 54
+    Caption = 'Let'#39's play Ping-Pong!   '
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -40
+    Font.Name = 'Kristen ITC'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+    Transparent = True
+  end
   object ball: TImage
-    Left = 872
-    Top = 432
+    Left = 448
+    Top = 288
     Width = 32
     Height = 32
     AutoSize = True
+    Enabled = False
     Picture.Data = {
       07544269746D6170360C0000424D360C00000000000036000000280000002000
       0000200000000100180000000000000C0000220B0000220B0000000000000000
@@ -132,6 +147,7 @@ object Form1: TForm1
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
       FFFF}
     Transparent = True
+    Visible = False
   end
   object leftRacket: TImage
     Left = 16
@@ -139,6 +155,7 @@ object Form1: TForm1
     Width = 20
     Height = 200
     AutoSize = True
+    Enabled = False
     Picture.Data = {
       07544269746D6170162F0000424D162F00000000000036000000280000001400
       0000C80000000100180000000000E02E00000000000000000000000000000000
@@ -518,6 +535,7 @@ object Form1: TForm1
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000}
+    Visible = False
   end
   object rightRacket: TImage
     Left = 904
@@ -525,6 +543,7 @@ object Form1: TForm1
     Width = 20
     Height = 200
     AutoSize = True
+    Enabled = False
     Picture.Data = {
       07544269746D6170162F0000424D162F00000000000036000000280000001400
       0000C80000000100180000000000E02E00000000000000000000000000000000
@@ -904,8 +923,74 @@ object Form1: TForm1
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000}
+    Visible = False
+  end
+  object ballBounces: TLabel
+    Left = 160
+    Top = 152
+    Width = 544
+    Height = 54
+    Caption = 'Number of ball bounces:   '
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -40
+    Font.Name = 'Kristen ITC'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+    Visible = False
+  end
+  object newGame: TButton
+    Left = 328
+    Top = 432
+    Width = 233
+    Height = 57
+    Cursor = crHandPoint
+    Caption = 'New game'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -40
+    Font.Name = 'Kristen ITC'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+    TabOrder = 0
+    OnClick = newGameClick
+  end
+  object nextRound: TButton
+    Left = 312
+    Top = 240
+    Width = 273
+    Height = 57
+    Cursor = crHandPoint
+    Caption = 'Next round'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -40
+    Font.Name = 'Kristen ITC'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+    TabOrder = 1
+    Visible = False
+    OnClick = nextRoundClick
+  end
+  object startOver: TButton
+    Left = 312
+    Top = 328
+    Width = 273
+    Height = 57
+    Cursor = crHandPoint
+    Caption = 'Start over'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -40
+    Font.Name = 'Kristen ITC'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+    TabOrder = 2
+    Visible = False
+    OnClick = startOverClick
   end
   object timerBall: TTimer
+    Enabled = False
     Interval = 30
     OnTimer = timerBallTimer
     Left = 32
