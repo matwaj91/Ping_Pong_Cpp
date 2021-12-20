@@ -117,9 +117,12 @@ void __fastcall TForm1::timerBallTimer(TObject *Sender)
 
 void __fastcall TForm1::newGameClick(TObject *Sender)
 {
-   ball->Picture->LoadFromFile("img/ball.bmp");
-   leftRacket->Picture->LoadFromFile("img/racket.bmp");
-   rightRacket->Picture->LoadFromFile("img/racket.bmp");
+   ball->Left = 448;
+   ball->Top = 288;
+   leftRacket->Left = 16;
+   leftRacket->Top = 152;
+   rightRacket->Left = 904;
+   rightRacket->Top = 152;
    header->Visible = false;
    newGame->Visible = false;
    timerBall->Enabled = true;
