@@ -2,6 +2,7 @@
 
 #include <vcl.h>
 #pragma hdrstop
+#include "mmsystem.h"
 
 #include "Unit1.h"
 //---------------------------------------------------------------------------
@@ -84,6 +85,7 @@ void __fastcall TForm1::timerBallTimer(TObject *Sender)
 
       timerBall->Enabled = false;
       ball->Visible = false;
+      sndPlaySound("snd/start.wav",SND_SYNC);
       leftRacket->Visible = false;
       rightRacket->Visible = false;
       header->Transparent = false;
@@ -177,4 +179,18 @@ void __fastcall TForm1::nextRoundClick(TObject *Sender)
      ball->Visible = true;
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TForm1::informationClick(TObject *Sender)
+{
+    AnsiString welcome = "Welcome to PingPong Game!";
+    AnsiString leftplayer = "Left player moves the paddle by using W and S buttons.";
+    AnsiString rightPlayer = "Right player moves the paddle by using Up Arrow and Down Arrow. ";
+    AnsiString ballBounce = "The longer you bounce, the faster moves the ball. ";
+    AnsiString goodLuck = "Good Luck!";
+
+    ShowMessage(welcome + '\n' + '\n' + leftplayer + '\n' + rightPlayer + '\n' +
+                ballBounce + '\n' + '\n'+ goodLuck);
+}
+//---------------------------------------------------------------------------
+
 

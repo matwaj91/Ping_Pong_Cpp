@@ -1,9 +1,9 @@
 object Form1: TForm1
-  Left = 268
-  Top = 71
+  Left = 250
+  Top = 62
   Width = 957
   Height = 588
-  Caption = 'Ping Pong'
+  Caption = 'Ping Pong by Mateusz'
   Color = clBtnFace
   UseDockManager = True
   DockSite = True
@@ -15,6 +15,7 @@ object Form1: TForm1
   OldCreateOrder = False
   OnKeyDown = FormKeyDown
   OnKeyUp = FormKeyUp
+  OnShow = informationClick
   PixelsPerInch = 96
   TextHeight = 13
   object background: TShape
@@ -940,7 +941,7 @@ object Form1: TForm1
     Visible = False
   end
   object newGame: TButton
-    Left = 328
+    Left = 352
     Top = 432
     Width = 233
     Height = 57
@@ -988,6 +989,23 @@ object Form1: TForm1
     TabOrder = 2
     Visible = False
     OnClick = startOverClick
+  end
+  object information: TButton
+    Left = 600
+    Top = 280
+    Width = 265
+    Height = 65
+    Caption = 'Information'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -40
+    Font.Name = 'Kristen ITC'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+    TabOrder = 3
+    Visible = False
+    OnClick = informationClick
+    OnEnter = informationClick
   end
   object timerBall: TTimer
     Enabled = False
